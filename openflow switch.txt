@@ -1,0 +1,40 @@
+sh openflow switch 1
+Logical Switch Context
+  Id: 1
+  Switch type: Forwarding
+  Pipeline id: 1
+  Data plane: standalone
+  Table-Miss default: controller
+  Configured protocol version: OF protocol 1.3
+  Config state: no-shutdown
+  Working state: enabled
+  Rate limit (packet per second): 300
+  Burst limit: 50
+  Max backoff (sec): 8
+  Probe interval (sec): 7
+  TLS local trustpoint name: not configured
+  TLS remote trustpoint name: not configured
+  Logging flow changes: Enabled
+  Stats collect interval (sec): 7
+  Stats collect Max flows: 1000
+  Stats collect period (sec):  1
+  Minimum flow idle timeout (sec):  14
+  OFA Description:
+     Manufacturer: Cisco Systems, Inc.
+     Hardware: WS-C2960X-24TS-L
+     Software: Cisco IOS Software, C2960X Software (C2960X-UNIVERSALK9-M), Version 15.2(7)E6, RELEASE SOFTWARE (fc2)| openvswitch 2.1
+     Serial Num: FCW1939B2BC
+     DP Description: Switch:sw1
+  OF Features:
+     DPID: 0x0000000000000222
+     Number of tables: 1
+     Number of buffers: 256
+     Capabilities: FLOW_STATS TABLE_STATS PORT_STATS
+  Controllers:
+     10.0.0.99:6653, Protocol: TCP, VRF: default
+  Interfaces:
+     GigabitEthernet1/0/1
+     GigabitEthernet1/0/2
+     GigabitEthernet1/0/3
+     GigabitEthernet1/0/4
+     GigabitEthernet1/0/23

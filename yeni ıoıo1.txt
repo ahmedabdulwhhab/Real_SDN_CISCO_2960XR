@@ -1,0 +1,270 @@
+Switch#sh run
+Building configuration...
+
+Current configuration : 5943 bytes
+!
+! Last configuration change at 13:33:48 UTC Thu Aug 21 2008
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+enable password baykar
+!
+no aaa new-model
+switch 1 provision ws-c2960x-24ts-l
+feature openflow
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2871324544
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2871324544
+ revocation-check none
+ rsakeypair TP-self-signed-2871324544
+!
+!
+crypto pki certificate chain TP-self-signed-2871324544
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32383731 33323435 3434301E 170D3038 30383231 31313039
+  35345A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 38373133
+  32343534 3430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100B7A4 A9465B1D 602359B6 E85D81D8 A77F3295 7023F661 C0DCC3D5 8C321524
+  AE299B0A 21F79633 05B713B2 AFB26573 E98D5DDD 6EE6BC00 BAC5C6ED B3192BBA
+  4A114B46 702C3453 9568070C 25515756 5A8A4767 7C8AD752 93C8E6C4 21A321BE
+  49A7A80E 8D05C72D 18BAC1B4 A98A1244 00DA60B9 F87FC1D1 0E320BBA DBEC7CB7
+  4FFD0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 14DB2CCA 6FC8D001 798AD008 B04C726D 7FAB22BC 23301D06
+  03551D0E 04160414 DB2CCA6F C8D00179 8AD008B0 4C726D7F AB22BC23 300D0609
+  2A864886 F70D0101 05050003 818100A2 6D0D54DD B76DD825 9DBC4506 FCA98014
+  7C574C54 ABB95DED 2E4E1911 F30A55E9 B3B22A76 5AB7548D 98325ED6 4FAD9064
+  79A0D7CD 8EE64E8C EF262C34 C7021062 9B3CBEEF E6D97FD3 DF22987F 95A12550
+  94D11838 C93C44E1 916F5955 2EAC5AFE A5E35D26 6BD42F63 C572EBAA F7F19DA4
+  B9ECB6AF 8D3BE0C9 00D7A9BA 95FFC3
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0
+ ip address 10.0.0.9 255.255.255.0
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ switchport nonegotiate
+ speed auto 100
+ no cdp enable
+ flowcontrol receive on
+ mode openflow
+ spanning-tree portfast edge trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+ switchport nonegotiate
+ no cdp enable
+ mode openflow
+ spanning-tree portfast edge trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/3
+ switchport mode trunk
+ switchport nonegotiate
+ speed auto 100
+ no cdp enable
+ mode openflow
+ spanning-tree portfast edge trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/4
+ switchport mode trunk
+ switchport nonegotiate
+ no cdp enable
+ mode openflow
+ spanning-tree portfast edge trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/5
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ switchport mode access
+!
+interface GigabitEthernet1/0/7
+ switchport mode access
+!
+interface GigabitEthernet1/0/8
+ switchport mode access
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 10
+ switchport mode trunk
+ switchport nonegotiate
+ no cdp enable
+ mode openflow
+ spanning-tree portfast edge trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/24
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 10
+ switchport mode access
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan10
+ no ip address
+!
+!
+ip http server
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.0.0.99
+!
+!
+!
+openflow
+ switch 1 pipeline 1
+  controller ipv4 10.0.0.99 port 6653 security none
+  of-port interface GigabitEthernet1/0/1
+  of-port interface GigabitEthernet1/0/2
+  of-port interface GigabitEthernet1/0/3
+  of-port interface GigabitEthernet1/0/4
+  of-port interface GigabitEthernet1/0/23
+  protocol-version 1.3
+  probe-interval 7
+  rate-limit packet_in 300 burst 50
+  datapath-id 0x222
+  dataplane-default standalone
+  default-miss controller
+  logging flow-modify
+!
+line con 0
+line vty 0 4
+ exec-timeout 720 0
+ logging synchronous
+ no login
+ transport preferred telnet
+ transport input telnet
+ transport output telnet
+line vty 5 10
+ exec-timeout 720 0
+ logging synchronous
+ no login
+ transport preferred telnet
+ transport input telnet
+ transport output telnet
+line vty 11 15
+ login
+ transport input ssh
+!
+!
+end
+
+Switch#
